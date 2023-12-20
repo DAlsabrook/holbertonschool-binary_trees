@@ -9,14 +9,15 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 {
 	int res = 1;
 
-	if (tree == NULL || (tree->left == NULL && tree->right == NULL))
+	if (tree == NULL)
 		return (0);
-	/*check if tree is "full"*/
-	if ((tree->left == NULL && tree->right != NULL) ||
-		(tree->right == NULL && tree->left != NULL))
-	{
-		return (0);
-	}
+	if ((tree->left == NULL && tree->right == NULL) && tree->parent == NULL)
+		/*check if tree is "full"*/
+		if ((tree->left == NULL && tree->right != NULL) ||
+			(tree->right == NULL && tree->left != NULL))
+		{
+			return (0);
+		}
 	if (res == 1 && tree->left != NULL && tree->right != NULL)
 	{
 		res = binary_tree_is_perfect(tree->left);
