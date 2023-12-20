@@ -7,14 +7,15 @@
 */
 int binary_tree_balance(const binary_tree_t *tree)
 {
-	int left_height, right_height;
+	int left_height, right_height, ans;
 
 	if (tree == NULL)
 		return (0);
 	left_height = height(tree->left);
 	right_height = height(tree->right);
+	ans = left_height - right_height + 1;
 	printf("Left: %d - Right: %d\n", left_height, right_height);
-	return ((left_height - right_height) + 1);
+	return (ans);
 }
 /**
  * height - find height of binary tree
