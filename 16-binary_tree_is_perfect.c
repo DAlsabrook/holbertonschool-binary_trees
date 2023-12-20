@@ -45,8 +45,8 @@ int tree_height(const binary_tree_t *tree)
 	int l, r;
 
 	if (tree->left != NULL)
-		l = binary_tree_height(tree->left) + 1;
+		l = tree_height(tree->left) + 1;
 	if (tree->right != NULL)
-		r = binary_tree_height(tree->right) + 1;
+		r = tree_height(tree->right) + 1;
 	return (l > r ? l : r);
 }
