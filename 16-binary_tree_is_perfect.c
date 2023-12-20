@@ -17,14 +17,11 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 	{
 		return (0);
 	}
-	if (res == 1 && tree->left != NULL)
+	if (res == 1 && tree->left != NULL && tree->right != NULL)
 	{
 		res = binary_tree_is_perfect(tree->left);
 		if (res == 0)
 			return (0);
-	}
-	if (res == 1 && tree->right != NULL)
-	{
 		res = binary_tree_is_perfect(tree->right);
 		if (res == 0)
 			return (0);
