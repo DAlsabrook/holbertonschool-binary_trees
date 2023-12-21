@@ -15,12 +15,12 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 	int left = 1, right = 1;
 
 	if (tree == NULL)
-		return(0);
+		return (0);
 	if (tree->left != NULL)
 		left = binary_tree_is_perfect(tree->left);
 	if (tree->right != NULL)
 		right = binary_tree_is_perfect(tree->right);
-	if((binary_tree_is_full(tree) == 1) && (binary_tree_balance(tree) == 0))
+	if ((binary_tree_is_full(tree) == 1) && (binary_tree_balance(tree) == 0))
 		return (left * right);
 	return (0);
 }
