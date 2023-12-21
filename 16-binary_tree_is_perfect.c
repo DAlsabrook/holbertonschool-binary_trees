@@ -16,10 +16,12 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 
 	if (tree == NULL)
 		return (0);
+	/*recursivly check if left and right are full and balanced to 0*/
 	if (tree->left != NULL)
 		left = binary_tree_is_perfect(tree->left);
 	if (tree->right != NULL)
 		right = binary_tree_is_perfect(tree->right);
+	/*if both sides are full and balanced to 0 then when multiplied return should = 0*/
 	if ((binary_tree_is_full(tree) == 1) && (binary_tree_balance(tree) == 0))
 		return (left * right);
 	return (0);
